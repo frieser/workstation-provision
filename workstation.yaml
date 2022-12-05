@@ -1,0 +1,15 @@
+---
+- name: Provision workstation
+  hosts: all
+  remote_user: frieser
+  roles:
+  - programs
+  - role: petermosmans.customize-gnome
+    vars:
+      gnome_extensions:
+        - id: 517
+        - id: 545
+        - id: 3843
+        - id: 771
+        - id: 352
+        - id: 5237

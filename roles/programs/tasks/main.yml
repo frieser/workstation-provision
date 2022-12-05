@@ -1,0 +1,38 @@
+---
+# tasks file for roles/programs/
+
+- name: Add the flathub flatpak repository remote to the user installation
+  community.general.flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    method: user
+
+- name: Install flatpak packages
+  community.general.flatpak:
+    state: present
+    method: user
+    name:
+      - org.gimp.GIMP
+      - org.inkscape.Inkscape
+      - com.bitwarden.desktop
+      - com.feaneron.Boatswain
+      - com.github.flxzt.rnote
+      - com.github.tchx84.Flatseal
+      - com.jetbrains.GoLand
+      - com.raggesilver.BlackBox
+      - com.spotify.Client
+      - com.stremio.Stremio
+      - com.transmissionbt.Transmission
+      - com.valvesoftware.Steam
+      - de.haeckerfelix.Shortwave
+      - com.visualstudio.code-oss
+      - de.haeckerfelix.Shortwave
+      - me.kozec.syncthingtk
+      - net.lutris.Lutris
+      - org.blender.Blender
+      - org.blender.Blender.Codecs
+      - org.pulseaudio.pavucontrol
+      - org.videolan.VLC
+      - org.x.Warpinator
+      - com.mattjakeman.ExtensionManager
